@@ -1,0 +1,473 @@
+@model WebApplication1.Controllers.MenuViewModel
+@{
+    ViewData["Title"] = "菜單";
+}
+
+<div class="menu-container">
+    <!-- 頁面標題 -->
+    <div class="menu-header text-center mb-5">
+        <h1 class="menu-title">🍹 喝了變可愛飲料店菜單</h1>
+        <p class="menu-subtitle">精選飲品，讓您每一口都充滿幸福</p>
+    </div>
+
+    <!-- 分類導航 -->
+    <div class="category-nav mb-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        <span>全部</span>
+                    </button>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <button class="category-tab" data-category="@category.Id">
+                            <i class="@(category.IconClass ?? "fas fa-mug-hot")"></i>
+                            <span>@(category.Name ?? "未命名分類")</span>
+                        </button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 飲品列表 -->
+    <div class="drinks-container">
+        <!-- 按分類顯示（全部模式） -->
+        <div id="drinksListGrouped" class="drinks-list-grouped">
+            @foreach (var category in Model.Categories)
+            {
+                var categoryDrinks = Model.AllDrinks.Where(d => d.CategoryId == category.Id).ToList();
+                if (categoryDrinks.Any())
+                {
+                    <div class="category-section" data-category-section="@category.Id">
+                        <div class="category-header">
+                            <div class="category-header-content">
+                                <i class="@(category.IconClass ?? "fas fa-mug-hot")"></i>
+                                <h2 class="category-title">@(category.Name ?? "未命名分類")</h2>
+                                <span class="category-count">@categoryDrinks.Count 款</span>
+                            </div>
+                            <div class="category-divider"></div>
+                        </div>
+                        <div class="row">
+                            @foreach (var drink in categoryDrinks)
+                            {
+                                <div class="col-xl-3 col-lg-4 col-md-6 mb-3 drink-item" data-category="@drink.CategoryId">
+                                    <div class="drink-card">
+                                        <div class="drink-content">
+                                            <div class="drink-header">
+                                                <h3 class="drink-name">
+                                                    @(drink.Name ?? "未命名飲品")
+                                                    @if (drink.IsSeasonal)
+                                                    {
+                                                        <span class="seasonal-badge-inline">
+                                                            <i class="fas fa-snowflake"></i>
+                                                        </span>
+                                                    }
+                                                </h3>
+                                                <div class="drink-price">
+                                                    <span class="price">NT$ @drink.Price</span>
+                                                </div>
+                                            </div>
+                                            <p class="drink-description">@(drink.Description ?? "暫無描述")</p>
+                                            <div class="drink-footer">
+                                                <div class="temperature-options">
+                                                    @if (drink.IsHot)
+                                                    {
+                                                        <span class="temp-option hot">
+                                                            <i class="fas fa-fire"></i>
+                                                        </span>
+                                                    }
+                                                    @if (drink.IsCold)
+                                                    {
+                                                        <span class="temp-option cold">
+                                                            <i class="fas fa-snowflake"></i>
+                                                        </span>
+                                                    }
+                                                </div>
+                                                <button class="btn btn-primary btn-order btn-sm" data-drink-id="@drink.Id">
+                                                    <i class="fas fa-cart-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+        <!-- 單一分類顯示模式（點擊分類時使用） -->
+        <div id="drinksListFiltered" class="row" style="display: none;">
+            @foreach (var drink in Model.AllDrinks)
+            {
+                <div class="col-xl-3 col-lg-4 col-md-6 mb-3 drink-item" data-category="@drink.CategoryId">
+                    <div class="drink-card">
+                        <div class="drink-content">
+                            <div class="drink-header">
+                                <h3 class="drink-name">
+                                    @(drink.Name ?? "未命名飲品")
+                                    @if (drink.IsSeasonal)
+                                    {
+                                        <span class="seasonal-badge-inline">
+                                            <i class="fas fa-snowflake"></i>
+                                        </span>
+                                    }
+                                </h3>
+                                <div class="drink-price">
+                                    <span class="price">NT$ @drink.Price</span>
+                                </div>
+                            </div>
+                            <p class="drink-description">@(drink.Description ?? "暫無描述")</p>
+                            <div class="drink-footer">
+                                <div class="temperature-options">
+                                    @if (drink.IsHot)
+                                    {
+                                        <span class="temp-option hot">
+                                            <i class="fas fa-fire"></i>
+                                        </span>
+                                    }
+                                    @if (drink.IsCold)
+                                    {
+                                        <span class="temp-option cold">
+                                            <i class="fas fa-snowflake"></i>
+                                        </span>
+                                    }
+                                </div>
+                                <button class="btn btn-primary btn-order btn-sm" data-drink-id="@drink.Id">
+                                    <i class="fas fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- 空狀態 -->
+    <div class="empty-state text-center" id="emptyState" style="display: none;">
+        <div class="empty-icon">
+            <i class="fas fa-search"></i>
+        </div>
+        <h3>找不到相關飲品</h3>
+        <p>請嘗試選擇其他分類</p>
+    </div>
+</div>
+
+<!-- 加入購物車選項彈窗 -->
+<div class="modal fade" id="addToCartModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-mug-hot"></i> <span id="modalDrinkName"></span>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="modalDrinkId">
+                <input type="hidden" id="modalDrinkPrice">
+
+                <!-- 溫度選擇 -->
+                <div class="option-group">
+                    <label class="option-label">溫度 <span class="required">*</span></label>
+                    <div class="option-buttons">
+                        <button type="button" class="option-btn" data-option="temperature" data-value="hot">
+                            <i class="fas fa-fire"></i> 熱
+                        </button>
+                        <button type="button" class="option-btn" data-option="temperature" data-value="cold">
+                            <i class="fas fa-snowflake"></i> 冰
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 甜度選擇 -->
+                <div class="option-group">
+                    <label class="option-label">甜度</label>
+                    <div class="option-buttons">
+                        <button type="button" class="option-btn active" data-option="sweet" data-value="正常糖">正常糖</button>
+                        <button type="button" class="option-btn" data-option="sweet" data-value="少糖">少糖</button>
+                        <button type="button" class="option-btn" data-option="sweet" data-value="半糖">半糖</button>
+                        <button type="button" class="option-btn" data-option="sweet" data-value="微糖">微糖</button>
+                        <button type="button" class="option-btn" data-option="sweet" data-value="無糖">無糖</button>
+                    </div>
+                </div>
+
+                <!-- 冰度選擇 (只在選擇冰飲時顯示) -->
+                <div class="option-group" id="iceOptions" style="display: none;">
+                    <label class="option-label">冰度</label>
+                    <div class="option-buttons">
+                        <button type="button" class="option-btn active" data-option="ice" data-value="正常冰">正常冰</button>
+                        <button type="button" class="option-btn" data-option="ice" data-value="少冰">少冰</button>
+                        <button type="button" class="option-btn" data-option="ice" data-value="微冰">微冰</button>
+                        <button type="button" class="option-btn" data-option="ice" data-value="去冰">去冰</button>
+                    </div>
+                </div>
+
+                <!-- 數量選擇 -->
+                <div class="option-group">
+                    <label class="option-label">數量</label>
+                    <div class="quantity-selector">
+                        <button type="button" class="qty-btn" onclick="changeModalQty(-1)">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <input type="number" id="modalQuantity" class="qty-input" value="1" min="1" readonly>
+                        <button type="button" class="qty-btn" onclick="changeModalQty(1)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 價格顯示 -->
+                <div class="modal-price">
+                    <span>小計：</span>
+                    <span class="modal-subtotal">NT$ <span id="modalSubtotal">0</span></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" onclick="confirmAddToCart()">
+                    <i class="fas fa-cart-plus"></i> 確認加入
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            // 從 URL 參數讀取分類 ID
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryIdFromUrl = urlParams.get('categoryId');
+            
+            // 如果有指定分類，自動選中該分類
+            if (categoryIdFromUrl) {
+                // 找到對應的分類按鈕並點擊
+                const $targetTab = $(`.category-tab[data-category="${categoryIdFromUrl}"]`);
+                if ($targetTab.length > 0) {
+                    $('.category-tab').removeClass('active');
+                    $targetTab.addClass('active');
+                    filterDrinks(categoryIdFromUrl);
+                    
+                    // 平滑滾動到分類區域
+                    setTimeout(function() {
+                        $('html, body').animate({
+                            scrollTop: $('.category-nav').offset().top - 100
+                        }, 500);
+                    }, 100);
+                }
+            }
+            
+            // 分類切換功能
+            $('.category-tab').on('click', function() {
+                const categoryId = $(this).data('category');
+                
+                // 更新按鈕狀態
+                $('.category-tab').removeClass('active');
+                $(this).addClass('active');
+                
+                // 篩選飲品
+                filterDrinks(categoryId);
+            });
+            
+            function filterDrinks(categoryId) {
+                const $groupedList = $('#drinksListGrouped');
+                const $filteredList = $('#drinksListFiltered');
+                const $emptyState = $('#emptyState');
+                
+                if (categoryId === 'all') {
+                    // 顯示分組模式（按分類分組）
+                    $groupedList.show();
+                    $filteredList.hide();
+                    $emptyState.hide();
+                } else {
+                    // 顯示篩選模式（單一分類）
+                    $groupedList.hide();
+                    $filteredList.show();
+                    
+                    const $drinkItems = $filteredList.find('.drink-item');
+                    let visibleCount = 0;
+                    
+                    $drinkItems.each(function() {
+                        const $item = $(this);
+                        const itemCategoryId = $item.data('category');
+                        
+                        if (itemCategoryId == categoryId) {
+                            $item.show();
+                            visibleCount++;
+                        } else {
+                            $item.hide();
+                        }
+                    });
+                    
+                    // 顯示/隱藏空狀態
+                    if (visibleCount === 0) {
+                        $emptyState.show();
+                    } else {
+                        $emptyState.hide();
+                    }
+                }
+            }
+            
+            // 加入購物車功能
+            $('.btn-order').on('click', function() {
+                const drinkId = $(this).data('drink-id');
+                const drinkCard = $(this).closest('.drink-item');
+                const drinkName = drinkCard.find('.drink-name').text().trim();
+                const drinkPrice = parseFloat(drinkCard.find('.price').text().replace('NT$ ', '').replace(',', ''));
+
+                // 設置模態框資料
+                $('#modalDrinkId').val(drinkId);
+                $('#modalDrinkName').text(drinkName);
+                $('#modalDrinkPrice').val(drinkPrice);
+                $('#modalQuantity').val(1);
+                
+                // 重置選項
+                $('[data-option="temperature"]').removeClass('active');
+                $('[data-option="sweet"]').first().addClass('active');
+                $('[data-option="ice"]').first().addClass('active');
+                $('#iceOptions').hide();
+                
+                // 更新小計
+                updateModalSubtotal();
+                
+                // 顯示模態框
+                const modal = new bootstrap.Modal(document.getElementById('addToCartModal'));
+                modal.show();
+            });
+
+            // 選項按鈕點擊
+            $('.option-btn').on('click', function() {
+                const option = $(this).data('option');
+                $(`[data-option="${option}"]`).removeClass('active');
+                $(this).addClass('active');
+
+                // 如果是溫度選擇，控制冰度選項顯示
+                if (option === 'temperature') {
+                    const temp = $(this).data('value');
+                    if (temp === 'cold') {
+                        $('#iceOptions').slideDown();
+                    } else {
+                        $('#iceOptions').slideUp();
+                    }
+                }
+            });
+            
+            // Toast 提示功能
+            function showToast(message, type) {
+                const toast = $(`
+                    <div class="toast ${type}">
+                        <i class="fas fa-check-circle"></i>
+                        <span>${message}</span>
+                    </div>
+                `);
+                
+                $('body').append(toast);
+                
+                setTimeout(function() {
+                    toast.addClass('show');
+                }, 100);
+                
+                setTimeout(function() {
+                    toast.removeClass('show');
+                    setTimeout(function() {
+                        toast.remove();
+                    }, 300);
+                }, 3000);
+            }
+        });
+
+        // 更新模態框小計
+        function updateModalSubtotal() {
+            const price = parseFloat($('#modalDrinkPrice').val());
+            const qty = parseInt($('#modalQuantity').val());
+            const subtotal = price * qty;
+            $('#modalSubtotal').text(subtotal.toLocaleString());
+        }
+
+        // 修改模態框數量
+        function changeModalQty(change) {
+            const input = $('#modalQuantity');
+            let qty = parseInt(input.val()) + change;
+            if (qty < 1) qty = 1;
+            input.val(qty);
+            updateModalSubtotal();
+        }
+
+        // 確認加入購物車
+        function confirmAddToCart() {
+            const drinkId = parseInt($('#modalDrinkId').val());
+            const drinkName = $('#modalDrinkName').text();
+            const price = parseFloat($('#modalDrinkPrice').val());
+            const quantity = parseInt($('#modalQuantity').val());
+            const temperature = $('[data-option="temperature"].active').data('value');
+            const sweetLevel = $('[data-option="sweet"].active').data('value');
+            const iceLevel = temperature === 'cold' ? $('[data-option="ice"].active').data('value') : '';
+
+            // 驗證溫度是否已選擇
+            if (!temperature) {
+                alert('請選擇溫度');
+                return;
+            }
+
+            const cartItem = {
+                drinkId: drinkId,
+                drinkName: drinkName,
+                price: price,
+                quantity: quantity,
+                temperature: temperature,
+                sweetLevel: sweetLevel,
+                iceLevel: iceLevel
+            };
+
+            $.ajax({
+                url: '@Url.Action("AddToCart", "Cart")',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(cartItem),
+                success: function(result) {
+                    if (result.success) {
+                        // 關閉模態框
+                        bootstrap.Modal.getInstance(document.getElementById('addToCartModal')).hide();
+                        
+                        // 顯示成功提示
+                        showToast(result.message, 'success');
+                        
+                        // 更新購物車數量
+                        updateCartCount();
+                    }
+                },
+                error: function() {
+                    alert('加入購物車失敗，請稍後再試');
+                }
+            });
+        }
+
+        function showToast(message, type) {
+            const toast = $(`
+                <div class="toast ${type}">
+                    <i class="fas fa-check-circle"></i>
+                    <span>${message}</span>
+                </div>
+            `);
+            
+            $('body').append(toast);
+            
+            setTimeout(function() {
+                toast.addClass('show');
+            }, 100);
+            
+            setTimeout(function() {
+                toast.removeClass('show');
+                setTimeout(function() {
+                    toast.remove();
+                }, 300);
+            }, 3000);
+        }
+    </script>
+}
+

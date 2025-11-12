@@ -1,0 +1,64 @@
+﻿/* 清爽簡約主題樣式 - 白底灰字藍配件 */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #5DADE2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #3498DB;
+  text-decoration: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+  border: none;
+  border-radius: 25px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3498DB 0%, #5DADE2 100%);
+  transform: translateY(-2px);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+  border: none;
+}
+
+.border-top {
+  border-top: 1px solid #e9ecef;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+  background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button.accept-policy:hover {
+  background: linear-gradient(135deg, #3498DB 0%, #5DADE2 100%);
+  transform: translateY(-2px);
+}

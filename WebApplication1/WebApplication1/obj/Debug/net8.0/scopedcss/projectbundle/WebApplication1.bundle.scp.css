@@ -1,0 +1,65 @@
+/* _content/WebApplication1/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* 清爽簡約主題樣式 - 白底灰字藍配件 */
+
+a.navbar-brand[b-bddmc6yalx] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-bddmc6yalx] {
+  color: #5DADE2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover[b-bddmc6yalx] {
+  color: #3498DB;
+  text-decoration: none;
+}
+
+.btn-primary[b-bddmc6yalx] {
+  color: #fff;
+  background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+  border: none;
+  border-radius: 25px;
+}
+
+.btn-primary:hover[b-bddmc6yalx] {
+  background: linear-gradient(135deg, #3498DB 0%, #5DADE2 100%);
+  transform: translateY(-2px);
+}
+
+.nav-pills .nav-link.active[b-bddmc6yalx], .nav-pills .show > .nav-link[b-bddmc6yalx] {
+  color: #fff;
+  background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+  border: none;
+}
+
+.border-top[b-bddmc6yalx] {
+  border-top: 1px solid #e9ecef;
+}
+
+.border-bottom[b-bddmc6yalx] {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.box-shadow[b-bddmc6yalx] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.05);
+}
+
+button.accept-policy[b-bddmc6yalx] {
+  font-size: 1rem;
+  line-height: inherit;
+  background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button.accept-policy:hover[b-bddmc6yalx] {
+  background: linear-gradient(135deg, #3498DB 0%, #5DADE2 100%);
+  transform: translateY(-2px);
+}

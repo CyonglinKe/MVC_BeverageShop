@@ -1,0 +1,235 @@
+@model List<WebApplication1.Models.CartItem>
+
+@{
+    ViewData["Title"] = "購物車";
+    var total = Model.Sum(item => item.Subtotal);
+}
+
+<div class="cart-container">
+    <div class="cart-header">
+        <h1><i class="fas fa-shopping-cart"></i> 我的購物車</h1>
+        <p class="cart-subtitle">共 @Model.Sum(item => item.Quantity) 件商品</p>
+    </div>
+
+    @if (Model.Any())
+    {
+        <div class="cart-content">
+            <!-- 購物車商品列表 -->
+            <div class="cart-items-section">
+                @foreach (var item in Model)
+                {
+                    <div class="cart-item" data-drink-id="@item.DrinkId" data-temperature="@item.Temperature" data-sweet="@item.SweetLevel" data-ice="@item.IceLevel">
+                        <div class="cart-item-info">
+                            <h3 class="cart-item-name">@item.DrinkName</h3>
+                            <div class="cart-item-options">
+                                <span class="option-badge">@(item.Temperature == "hot" ? "熱" : "冰")</span>
+                                @if (!string.IsNullOrEmpty(item.SweetLevel))
+                                {
+                                    <span class="option-badge">@item.SweetLevel</span>
+                                }
+                                @if (!string.IsNullOrEmpty(item.IceLevel) && item.Temperature == "cold")
+                                {
+                                    <span class="option-badge">@item.IceLevel</span>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="cart-item-price">
+                            <span class="price">NT$ @item.Price</span>
+                        </div>
+
+                        <div class="cart-item-quantity">
+                            <button class="qty-btn qty-minus" onclick="updateQuantity(this, -1)">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" class="qty-input" value="@item.Quantity" min="1" readonly>
+                            <button class="qty-btn qty-plus" onclick="updateQuantity(this, 1)">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <div class="cart-item-subtotal">
+                            <span class="subtotal">NT$ @item.Subtotal</span>
+                        </div>
+
+                        <div class="cart-item-remove">
+                            <button class="btn-remove" onclick="removeItem(this)">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- 訂單摘要 -->
+            <div class="cart-summary">
+                <h3 class="summary-title">訂單摘要</h3>
+                <div class="summary-row">
+                    <span>商品小計</span>
+                    <span class="summary-value" id="summarySubtotal">NT$ @total</span>
+                </div>
+                <div class="summary-row">
+                    <span>運費</span>
+                    <span class="summary-value">NT$ 0</span>
+                </div>
+                <div class="summary-divider"></div>
+                <div class="summary-row summary-total">
+                    <span>總計</span>
+                    <span class="summary-value" id="summaryTotal">NT$ @total</span>
+                </div>
+
+                <a href="@Url.Action("Checkout", "Cart")" class="btn btn-checkout">
+                    <i class="fas fa-credit-card"></i> 前往結帳
+                </a>
+
+                <a href="@Url.Action("Index", "Menu")" class="btn btn-continue">
+                    <i class="fas fa-arrow-left"></i> 繼續選購
+                </a>
+
+                <button onclick="clearCart()" class="btn btn-clear">
+                    <i class="fas fa-broom"></i> 清空購物車
+                </button>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="cart-empty">
+            <div class="empty-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h2>購物車是空的</h2>
+            <p>還沒有添加任何商品，去看看有什麼好喝的吧！</p>
+            <a href="@Url.Action("Index", "Menu")" class="btn btn-primary">
+                <i class="fas fa-mug-hot"></i> 前往選購
+            </a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // 更新數量
+        function updateQuantity(btn, change) {
+            const cartItem = $(btn).closest('.cart-item');
+            const input = cartItem.find('.qty-input');
+            let newQty = parseInt(input.val()) + change;
+
+            if (newQty < 1) {
+                if (confirm('確定要移除此商品嗎？')) {
+                    removeItem(cartItem.find('.btn-remove')[0]);
+                }
+                return;
+            }
+
+            const drinkId = cartItem.data('drink-id');
+            const temperature = cartItem.data('temperature');
+
+            $.ajax({
+                url: '@Url.Action("UpdateQuantity", "Cart")',
+                type: 'POST',
+                data: { drinkId: drinkId, temperature: temperature, quantity: newQty },
+                success: function (result) {
+                    if (result.success) {
+                        input.val(newQty);
+                        updateCartDisplay();
+                        updateCartCount();
+                    }
+                }
+            });
+        }
+
+        // 移除商品
+        function removeItem(btn) {
+            if (!confirm('確定要移除此商品嗎？')) {
+                return;
+            }
+
+            const cartItem = $(btn).closest('.cart-item');
+            const drinkId = cartItem.data('drink-id');
+            const temperature = cartItem.data('temperature');
+            const sweetLevel = cartItem.data('sweet');
+            const iceLevel = cartItem.data('ice');
+
+            $.ajax({
+                url: '@Url.Action("RemoveItem", "Cart")',
+                type: 'POST',
+                data: { 
+                    drinkId: drinkId, 
+                    temperature: temperature,
+                    sweetLevel: sweetLevel,
+                    iceLevel: iceLevel
+                },
+                success: function (result) {
+                    if (result.success) {
+                        cartItem.fadeOut(300, function () {
+                            $(this).remove();
+                            updateCartDisplay();
+                            updateCartCount();
+
+                            // 如果購物車為空，刷新頁面
+                            if ($('.cart-item').length === 0) {
+                                location.reload();
+                            }
+                        });
+                    }
+                }
+            });
+        }
+
+        // 清空購物車
+        function clearCart() {
+            if (!confirm('確定要清空購物車嗎？')) {
+                return;
+            }
+
+            $.ajax({
+                url: '@Url.Action("ClearCart", "Cart")',
+                type: 'POST',
+                success: function (result) {
+                    if (result.success) {
+                        location.reload();
+                    }
+                }
+            });
+        }
+
+        // 更新購物車顯示
+        function updateCartDisplay() {
+            let subtotal = 0;
+            $('.cart-item').each(function () {
+                const qty = parseInt($(this).find('.qty-input').val());
+                const price = parseFloat($(this).find('.price').text().replace('NT$ ', '').replace(',', ''));
+                const itemSubtotal = qty * price;
+                $(this).find('.subtotal').text('NT$ ' + itemSubtotal.toLocaleString());
+                subtotal += itemSubtotal;
+            });
+
+            $('#summarySubtotal').text('NT$ ' + subtotal.toLocaleString());
+            $('#summaryTotal').text('NT$ ' + subtotal.toLocaleString());
+
+            const totalQty = $('.cart-item').toArray().reduce((sum, item) => {
+                return sum + parseInt($(item).find('.qty-input').val());
+            }, 0);
+            $('.cart-subtitle').text('共 ' + totalQty + ' 件商品');
+        }
+
+        // 更新購物車數量
+        function updateCartCount() {
+            $.ajax({
+                url: '@Url.Action("GetCartCount", "Cart")',
+                type: 'GET',
+                success: function (result) {
+                    $('.cart-count').text(result.count);
+                    if (result.count > 0) {
+                        $('.cart-count').show();
+                    } else {
+                        $('.cart-count').hide();
+                    }
+                }
+            });
+        }
+    </script>
+}
+
+

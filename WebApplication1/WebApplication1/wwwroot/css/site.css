@@ -1,0 +1,994 @@
+/* 基本設定 */
+html {
+  font-size: 14px;
+  position: relative;
+  min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Microsoft JhengHei', 'PingFang TC', 'Noto Sans TC', sans-serif;
+  background-color: #ffffff;
+  color: #6c757d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 導航欄樣式 */
+.navbar-custom {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-custom .navbar-brand {
+  padding: 0;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: #5DADE2;
+  background-color: transparent;
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%235DADE2' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-custom .nav-link {
+  color: #6c757d !important;
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 0.5rem 1.2rem !important;
+  margin: 0 0.2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #5DADE2 !important;
+  background-color: rgba(93, 173, 226, 0.1);
+  transform: translateY(-2px);
+}
+
+.navbar-custom .nav-link i {
+  margin-right: 5px;
+  color: #5DADE2;
+}
+
+/* 購物車圖標 */
+.cart-link {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 主要內容區域 */
+.main-content {
+  flex: 1;
+}
+
+/* 一般頁面的內容區域 */
+.main-content:not(.home-page) {
+  padding-top: 20px;
+}
+
+/* 頁腳樣式 */
+.footer-custom {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  margin-top: auto;
+  border-top: 1px solid #e9ecef;
+}
+
+.footer-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #495057;
+  border-bottom: 2px solid #5DADE2;
+  padding-bottom: 0.5rem;
+}
+
+.footer-logo {
+  max-width: 120px;
+  height: auto;
+  background-color: white;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #6c757d;
+}
+
+.footer-text i {
+  color: #5DADE2;
+  margin-right: 8px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  color: #6c757d;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #5DADE2;
+  transform: translateX(5px);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #5DADE2;
+  color: #ffffff !important;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon i {
+  color: #ffffff !important;
+}
+
+.social-icon:hover {
+  background-color: #3498DB;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(93, 173, 226, 0.3);
+}
+
+.social-icon:hover i {
+  color: #ffffff !important;
+}
+
+.footer-divider {
+  border-color: #dee2e6;
+  margin: 2rem 0 1rem 0;
+}
+
+/* 按鈕樣式 */
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #5DADE2;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #5DADE2 0%, #85C1E9 100%);
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3498DB 0%, #5DADE2 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(93, 173, 226, 0.3);
+}
+
+/* 卡片樣式 */
+.card {
+  border: 1px solid #e9ecef;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(93, 173, 226, 0.15);
+  border-color: #5DADE2;
+}
+
+/* 響應式設計 */
+@media (max-width: 991px) {
+  .navbar-custom .navbar-nav {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    border: 1px solid #e9ecef;
+  }
+
+  .navbar-custom .nav-link {
+    margin: 0.3rem 0;
+  }
+  
+  .logo-img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-custom .col-sm-12 {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* 額外的文字和圖標樣式 */
+h1, h2, h3, h4, h5, h6 {
+  color: #495057;
+}
+
+p {
+  color: #6c757d;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* ==================== 首頁輪播樣式 ==================== */
+
+/* 輪播容器 */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px); /* 扣除 navbar 高度 */
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* 幻燈片 */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* 幻燈片遮罩層 */
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* 幻燈片內容 */
+.slide-content {
+  padding: 2rem;
+  color: white;
+  z-index: 2;
+  max-width: 800px;
+  position: relative;
+}
+
+.slide-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.slide-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slide-btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: white;
+  color: #495057;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slide-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  color: #5DADE2;
+}
+
+/* 動畫效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide.active .animate-fade-in {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.slide.active .animate-fade-in-delay-1 {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.slide.active .animate-fade-in-delay-2 {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* 輪播指示器 */
+.slider-indicators {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 15px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.indicator.active {
+  background-color: white;
+  width: 40px;
+  border-radius: 6px;
+}
+
+/* 向下滾動提示 */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-text {
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-arrow {
+  color: white;
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-indicator:hover .scroll-arrow {
+  animation: bounce 0.5s infinite;
+  color: #5DADE2;
+}
+
+/* ==================== 內容區域樣式 ==================== */
+
+.content-section {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+}
+
+/* 特色區域 */
+.features-section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #495057;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #5DADE2, #85C1E9);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(93, 173, 226, 0.2);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #5DADE2, #85C1E9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #495057;
+}
+
+.feature-text {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* 類別介紹區域 */
+.category-intro-section {
+  padding: 5rem 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #999;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  margin-top: -1.5rem;
+  margin-bottom: 3rem;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.category-intro-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex: 1;
+  min-width: 120px;
+}
+
+.category-intro-card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-intro-card {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 0;
+  overflow: visible;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.category-intro-card:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.category-intro-card:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.category-intro-card-link:hover .category-intro-card {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.category-intro-card-link:hover {
+  flex: 2.5;
+  z-index: 10;
+}
+
+/* 為每個分類設定不同的背景圖片和漸變 */
+/* 經典茶類 */
+.category-intro-card-link:nth-child(1) .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(255, 183, 77, 0.3), rgba(255, 152, 0, 0.1)),
+              url('https://images.pexels.com/photos/3889844/pexels-photo-3889844.jpeg') center/cover no-repeat;
+}
+
+/* 水果茶類 */
+.category-intro-card-link:nth-child(2) .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(102, 187, 106, 0.5), rgba(76, 175, 80, 0.1)),
+              url('https://images.pexels.com/photos/1194030/pexels-photo-1194030.jpeg') center/cover no-repeat;
+}
+
+/* 鮮奶茶類 */
+.category-intro-card-link:nth-child(3) .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(100, 181, 246, 0.5), rgba(66, 165, 245, 0.1)),
+              url('https://images.pexels.com/photos/4974543/pexels-photo-4974543.jpeg') center/cover no-repeat;
+}
+
+/* 奶蓋茶類 */
+.category-intro-card-link:nth-child(4) .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(236, 64, 122, 0.5), rgba(233, 30, 99, 0.1)),
+              url('https://images.pexels.com/photos/6413575/pexels-photo-6413575.jpeg') center/cover no-repeat;
+}
+
+/* 特色飲品 */
+.category-intro-card-link:nth-child(5) .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(171, 71, 188, 0.5), rgba(156, 39, 176, 0.1)),
+              url('https://images.pexels.com/photos/6413656/pexels-photo-6413656.jpeg') center/cover no-repeat;
+}
+
+/* 咖啡飲品 */
+.category-intro-card-link:nth-child(6) .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(141, 110, 99, 0.5), rgba(121, 85, 72, 0.1)),
+              url('https://images.pexels.com/photos/14755108/pexels-photo-14755108.jpeg') center/cover no-repeat;
+}
+
+/* 季節限定 */
+.category-intro-card-link:nth-child(7) .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(255, 112, 67, 0.5), rgba(255, 87, 34, 0.1)),
+              url('https://images.pexels.com/photos/20346398/pexels-photo-20346398.jpeg') center/cover no-repeat;
+}
+
+/* Hover 狀態 - 漸層色變更透明 */
+.category-intro-card-link:nth-child(1):hover .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(255, 183, 77, 0.1), rgba(255, 152, 0, 0.05)),
+              url('https://images.pexels.com/photos/3889844/pexels-photo-3889844.jpeg') center/cover no-repeat;
+}
+
+.category-intro-card-link:nth-child(2):hover .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(102, 187, 106, 0.1), rgba(76, 175, 80, 0.05)),
+              url('https://images.pexels.com/photos/1194030/pexels-photo-1194030.jpeg') center/cover no-repeat;
+}
+
+.category-intro-card-link:nth-child(3):hover .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(100, 181, 246, 0.1), rgba(66, 165, 245, 0.05)),
+              url('https://images.pexels.com/photos/4974543/pexels-photo-4974543.jpeg') center/cover no-repeat;
+}
+
+.category-intro-card-link:nth-child(4):hover .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(236, 64, 122, 0.1), rgba(233, 30, 99, 0.05)),
+              url('https://images.pexels.com/photos/6413575/pexels-photo-6413575.jpeg') center/cover no-repeat;
+}
+
+.category-intro-card-link:nth-child(5):hover .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(171, 71, 188, 0.1), rgba(156, 39, 176, 0.05)),
+              url('https://images.pexels.com/photos/6413656/pexels-photo-6413656.jpeg') center/cover no-repeat;
+}
+
+.category-intro-card-link:nth-child(6):hover .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(141, 110, 99, 0.1), rgba(121, 85, 72, 0.05)),
+              url('https://images.pexels.com/photos/14755108/pexels-photo-14755108.jpeg') center/cover no-repeat;
+}
+
+.category-intro-card-link:nth-child(7):hover .category-intro-overlay {
+  background: linear-gradient(135deg, rgba(255, 112, 67, 0.1), rgba(255, 87, 34, 0.05)),
+              url('https://images.pexels.com/photos/20346398/pexels-photo-20346398.jpeg') center/cover no-repeat;
+}
+
+.category-intro-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  color: white;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.category-intro-icon {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-intro-icon i {
+  font-size: 3rem;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.category-intro-card-link:hover .category-intro-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.category-intro-card-link:hover .category-intro-icon i {
+  font-size: 2.5rem;
+}
+
+.category-intro-title {
+  color:white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.category-intro-card-link:hover .category-intro-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-intro-description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.category-intro-card-link:hover .category-intro-description {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
+.category-intro-description p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* CTA 區域 */
+.cta-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  margin: 3rem 0;
+  color: white;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-btn {
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  background-color: white;
+  color: #495057;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #f8f9fa;
+  color: #5DADE2;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: calc(100vh - 70px); /* 手機版 navbar 稍微小一點 */
+  }
+
+  .slide-title {
+    font-size: 2rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .slide-btn {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .slider-indicators {
+    bottom: 80px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .feature-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .category-grid {
+    padding: 0 1rem;
+  }
+
+  .category-intro-card {
+    height: 400px;
+    min-width: 100px;
+  }
+
+  .category-intro-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .category-intro-icon i {
+    font-size: 2.5rem;
+  }
+
+  .category-intro-title {
+    font-size: 1.4rem;
+  }
+
+  .category-intro-card-link:hover .category-intro-title {
+    font-size: 1.3rem;
+  }
+
+  .category-intro-card-link:hover .category-intro-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .category-intro-card-link:hover .category-intro-icon i {
+    font-size: 2rem;
+  }
+
+  .category-intro-description p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .slide-title {
+    font-size: 1.5rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1rem;
+  }
+
+  .content-section {
+    padding: 2rem 0;
+  }
+
+  .cta-section {
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+  }
+
+  .category-intro-section {
+    padding: 3rem 0;
+  }
+
+  .category-grid {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .category-intro-card-link {
+    flex: auto;
+  }
+
+  .category-intro-card {
+    height: 200px;
+    min-width: unset;
+    width: 100%;
+    border-radius: 15px !important;
+    margin-bottom: 1rem;
+  }
+
+  .category-intro-card-link:hover {
+    flex: 1;
+  }
+
+  .category-intro-card-link:hover .category-intro-card {
+    height: 350px;
+  }
+
+  .category-intro-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.8rem;
+  }
+
+  .category-intro-icon i {
+    font-size: 1.8rem;
+  }
+
+  .category-intro-title {
+    font-size: 1.2rem;
+  }
+
+  .category-intro-card-link:hover .category-intro-title {
+    font-size: 1.3rem;
+  }
+
+  .category-intro-card-link:hover .category-intro-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .category-intro-card-link:hover .category-intro-icon i {
+    font-size: 1.6rem;
+  }
+
+  .category-intro-description p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .category-intro-overlay {
+    padding: 1.5rem 1rem;
+  }
+
+  .category-intro-description {
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,342 @@
+﻿@{
+    ViewData["Title"] = "關於我們";
+}
+
+<style>
+    .about-hero {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.5) 0%, rgba(118, 75, 162, 0.3) 100%), url('https://images.pexels.com/photos/34216321/pexels-photo-34216321.jpeg') center/cover no-repeat;
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+    }
+
+    .about-hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .about-hero p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-section h2 {
+        color: #667eea;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .about-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        height: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    .about-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .about-icon {
+        font-size: 3rem;
+        color: #667eea;
+        margin-bottom: 20px;
+    }
+
+    .about-card h3 {
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .about-card p {
+        color: #666;
+        line-height: 1.8;
+    }
+
+    .story-section {
+        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        padding: 60px 0;
+        margin: 60px 0;
+    }
+
+    .story-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .story-content p {
+        font-size: 1.1rem;
+        line-height: 2;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .value-item {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .value-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #667eea;
+        margin-bottom: 10px;
+    }
+
+    .value-text {
+        font-size: 1.2rem;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .contact-section {
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        margin-top: 50px;
+    }
+
+    .contact-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+    }
+
+    .contact-info i {
+        color: #667eea;
+        margin-right: 15px;
+        width: 30px;
+    }
+
+    .team-section {
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .team-member {
+        text-align: center;
+    }
+
+    .team-avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+    }
+
+    .team-name {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .team-role {
+        color: #666;
+    }
+</style>
+
+<div class="about-hero">
+    <div class="container">
+        <h1>🥤 喝了變可愛飲料店</h1>
+        <p>我們相信，每一杯飲料都能為您的一天增添美好與活力！<br/>用心製作每一杯飲品，讓您喝了真的變可愛！</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- 我們的故事 -->
+    <div class="story-section">
+        <div class="story-content">
+            <h2 style="color: #667eea; margin-bottom: 30px;">我們的故事</h2>
+            <p>
+                「喝了變可愛飲料店」成立於 2023 年，源自於創辦人對飲品的熱愛與堅持。
+                我們相信，一杯好的飲料不僅能解渴，更能帶來愉悅的心情。
+            </p>
+            <p>
+                從嚴選食材開始，我們堅持使用新鮮水果、優質茶葉，以及天然配料，
+                拒絕使用人工香精和化學添加物。每一杯飲料都是我們用心的呈現，
+                希望每位顧客都能感受到我們的用心與真誠。
+            </p>
+            <p>
+                「喝了變可愛」不只是一個店名，更是我們對顧客的承諾 —— 
+                讓您在享用美味飲品的同時，心情也變得美麗可愛！
+            </p>
+        </div>
+    </div>
+
+    <!-- 核心價值 -->
+    <div class="about-section">
+        <h2>我們的核心價值</h2>
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>天然健康</h3>
+                    <p>堅持使用天然食材，不添加人工香精和色素。每一杯飲料都是健康與美味的完美結合。</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>用心製作</h3>
+                    <p>每一杯飲料都經過嚴格的品質把關，從食材挑選到製作過程，我們都用心對待。</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>顧客至上</h3>
+                    <p>您的滿意是我們最大的動力。我們用最親切的服務，為您打造最棒的飲品體驗。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 我們的成就 -->
+    <div class="about-section">
+        <h2>我們的成就</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-number">10,000+</div>
+                <div class="value-text">滿意顧客</div>
+            </div>
+            <div class="value-item">
+                <div class="value-number">50+</div>
+                <div class="value-text">精選飲品</div>
+            </div>
+            <div class="value-item">
+                <div class="value-number">100%</div>
+                <div class="value-text">新鮮食材</div>
+            </div>
+            <div class="value-item">
+                <div class="value-number">365天</div>
+                <div class="value-text">全年營業</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 團隊介紹 -->
+    <div class="team-section">
+        <h2 style="color: #667eea;">我們的團隊</h2>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 40px;">
+            專業、熱情、用心的團隊，為您提供最優質的服務
+        </p>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="team-name">王大明</div>
+                <div class="team-role">創辦人 & 總經理</div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="team-name">李小華</div>
+                <div class="team-role">首席調飲師</div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <div class="team-name">陳美玲</div>
+                <div class="team-role">營運經理</div>
+            </div>
+            <div class="team-member">
+                <div class="team-avatar">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <div class="team-name">林志明</div>
+                <div class="team-role">品質管理師</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 聯絡資訊 -->
+    <div class="contact-section">
+        <h2 style="text-align: center; color: #667eea; margin-bottom: 40px;">聯絡我們</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>台北市信義區信義路五段 7 號</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <span>0800-123-456</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@drinkshop.com</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <i class="fas fa-clock"></i>
+                    <span>營業時間：每日 10:00 - 22:00</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>全年無休</span>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-parking"></i>
+                    <span>提供停車服務</span>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a asp-controller="Menu" asp-action="Index" class="btn btn-lg" 
+               style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; border-radius: 50px;">
+                <i class="fas fa-mug-hot"></i> 立即點餐
+            </a>
+        </div>
+    </div>
+</div>
+
+<div style="height: 50px;"></div>

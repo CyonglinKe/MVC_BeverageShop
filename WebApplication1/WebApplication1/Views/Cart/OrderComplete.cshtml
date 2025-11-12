@@ -1,0 +1,124 @@
+@model WebApplication1.Models.Order
+
+@{
+    ViewData["Title"] = "訂單完成";
+}
+
+<div class="order-complete-container">
+    <div class="order-complete-card">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+
+        <h1 class="success-title">訂單完成！</h1>
+        <p class="success-message">感謝您的訂購，我們已收到您的訂單</p>
+
+        <div class="order-info-card">
+            <h3>訂單資訊</h3>
+            <div class="info-row">
+                <span class="label">訂購人：</span>
+                <span class="value">@Model.CustomerName</span>
+            </div>
+            <div class="info-row">
+                <span class="label">聯絡電話：</span>
+                <span class="value">@Model.Phone</span>
+            </div>
+            @if (!string.IsNullOrEmpty(Model.Email))
+            {
+                <div class="info-row">
+                    <span class="label">Email：</span>
+                    <span class="value">@Model.Email</span>
+                </div>
+            }
+            <div class="info-row">
+                <span class="label">取貨方式：</span>
+                <span class="value">@(Model.DeliveryMethod == "pickup" ? "到店取貨" : "外送服務")</span>
+            </div>
+            @if (Model.DeliveryMethod == "delivery")
+            {
+                <div class="info-row">
+                    <span class="label">外送地址：</span>
+                    <span class="value">@Model.DeliveryAddress</span>
+                </div>
+            }
+            <div class="info-row">
+                <span class="label">付款方式：</span>
+                <span class="value">@(Model.PaymentMethod == "cash" ? "現金付款" : "信用卡")</span>
+            </div>
+            <div class="info-row">
+                <span class="label">訂單時間：</span>
+                <span class="value">@Model.OrderDate.ToString("yyyy/MM/dd HH:mm")</span>
+            </div>
+            @if (!string.IsNullOrEmpty(Model.Note))
+            {
+                <div class="info-row">
+                    <span class="label">備註：</span>
+                    <span class="value">@Model.Note</span>
+                </div>
+            }
+        </div>
+
+        <div class="order-items-card">
+            <h3>訂購商品</h3>
+            <div class="order-items-list">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="order-item">
+                        <div class="order-item-info">
+                            <h4>@item.DrinkName</h4>
+                            <div class="order-item-options">
+                                @(item.Temperature == "hot" ? "熱" : "冰")
+                                @if (!string.IsNullOrEmpty(item.SweetLevel))
+                                {
+                                    <span> · @item.SweetLevel</span>
+                                }
+                                @if (!string.IsNullOrEmpty(item.IceLevel) && item.Temperature == "cold")
+                                {
+                                    <span> · @item.IceLevel</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="order-item-price">
+                            <span class="qty">x @item.Quantity</span>
+                            <span class="price">NT$ @item.Subtotal</span>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="order-total">
+                <span>總計</span>
+                <span class="total-amount">NT$ @Model.TotalAmount</span>
+            </div>
+        </div>
+
+        <div class="order-complete-message">
+            <p>
+                <i class="fas fa-info-circle"></i>
+                @if (Model.DeliveryMethod == "pickup")
+                {
+                    <span>請於 30 分鐘後至店內取貨</span>
+                }
+                else
+                {
+                    <span>我們會在 30-60 分鐘內完成配送</span>
+                }
+            </p>
+            <p>
+                <i class="fas fa-phone"></i>
+                如有任何問題，請撥打 0800-123-456
+            </p>
+        </div>
+
+        <div class="order-complete-actions">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-primary">
+                <i class="fas fa-home"></i> 返回首頁
+            </a>
+            <a href="@Url.Action("Index", "Menu")" class="btn btn-secondary">
+                <i class="fas fa-mug-hot"></i> 繼續選購
+            </a>
+        </div>
+    </div>
+</div>
+
+

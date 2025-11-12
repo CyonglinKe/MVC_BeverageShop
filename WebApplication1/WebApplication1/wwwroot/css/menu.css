@@ -1,0 +1,499 @@
+/* 菜單頁面專用樣式 */
+
+.menu-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: #ffffff;
+}
+
+/* 頁面標題 */
+.menu-header {
+    margin-bottom: 3rem;
+}
+
+.menu-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #495057;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+/* 分類導航 */
+.category-nav {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.category-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border: 2px solid #e9ecef;
+    border-radius: 25px;
+    color: #6c757d;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.category-tab:hover {
+    border-color: #5DADE2;
+    color: #5DADE2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(93, 173, 226, 0.2);
+}
+
+.category-tab.active {
+    background-color: #5DADE2;
+    border-color: #5DADE2;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(93, 173, 226, 0.3);
+}
+
+.category-tab i {
+    font-size: 1.1rem;
+}
+
+/* 分類區塊 */
+.category-section {
+    margin-bottom: 3rem;
+}
+
+.category-header {
+    margin-bottom: 1.5rem;
+}
+
+.category-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.category-header-content i {
+    font-size: 1.8rem;
+    color: #5DADE2;
+}
+
+.category-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #495057;
+    margin: 0;
+}
+
+.category-count {
+    background-color: #5DADE2;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.category-divider {
+    height: 3px;
+    background: linear-gradient(to right, #5DADE2, transparent);
+    border-radius: 2px;
+}
+
+/* 飲品卡片 */
+.drink-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.drink-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.drink-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 15px rgba(93, 173, 226, 0.15);
+    border-color: #5DADE2;
+}
+
+.seasonal-badge-inline {
+    display: inline-block;
+    margin-left: 5px;
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.drink-content {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.drink-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+}
+
+.drink-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+    margin: 0;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.drink-description {
+    color: #6c757d;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.drink-price {
+    flex-shrink: 0;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #5DADE2;
+    white-space: nowrap;
+}
+
+.drink-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.temperature-options {
+    display: flex;
+    gap: 6px;
+}
+
+.temp-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+}
+
+.temp-option.hot {
+    background-color: rgba(255, 107, 107, 0.15);
+    color: #ff6b6b;
+}
+
+.temp-option.cold {
+    background-color: rgba(93, 173, 226, 0.15);
+    color: #5DADE2;
+}
+
+.btn-order {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.btn-order.loading {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.btn-order.success {
+    background-color: #28a745;
+}
+
+/* 空狀態 */
+.empty-state {
+    padding: 4rem 2rem;
+    color: #6c757d;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    color: #dee2e6;
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+/* Toast 提示 */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast.success {
+    border-left: 4px solid #28a745;
+}
+
+.toast.success i {
+    color: #28a745;
+}
+
+/* ==================== 模態框樣式 ==================== */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border-bottom: 2px solid #5DADE2;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    color: #495057;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.modal-title i {
+    color: #5DADE2;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.option-group {
+    margin-bottom: 1.5rem;
+}
+
+.option-label {
+    display: block;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.option-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.option-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 0.75rem 1rem;
+    border: 2px solid #dee2e6;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.option-btn:hover {
+    border-color: #5DADE2;
+    background-color: #e3f2fd;
+}
+
+.option-btn.active {
+    border-color: #5DADE2;
+    background-color: #5DADE2;
+    color: white;
+}
+
+.option-btn i {
+    margin-right: 0.25rem;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.modal-price {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.modal-subtotal {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #5DADE2;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 1rem 1.5rem;
+}
+
+.modal-footer .btn {
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* 響應式設計 */
+@media (max-width: 1200px) {
+    .menu-container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        max-width: 95%;
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .menu-title {
+        font-size: 2rem;
+    }
+    
+    .menu-subtitle {
+        font-size: 1rem;
+    }
+    
+    .category-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .category-tab {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+    
+    .category-section {
+        margin-bottom: 2rem;
+    }
+    
+    .category-title {
+        font-size: 1.3rem;
+    }
+    
+    .category-header-content i {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-container {
+        max-width: 100%;
+        padding: 1rem 0;
+    }
+    
+    .menu-header {
+        margin-bottom: 2rem;
+    }
+    
+    .menu-title {
+        font-size: 1.8rem;
+    }
+    
+    .category-nav {
+        padding: 1rem;
+    }
+    
+    .drink-content {
+        padding: 0.875rem;
+    }
+    
+    .drink-name {
+        font-size: 1rem;
+    }
+    
+    .price {
+        font-size: 1.1rem;
+    }
+}
+

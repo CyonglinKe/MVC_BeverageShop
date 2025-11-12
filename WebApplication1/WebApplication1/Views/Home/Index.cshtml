@@ -1,0 +1,224 @@
+﻿@model List<WebApplication1.Models.DrinkCategory>
+
+@{
+    ViewData["Title"] = "首頁";
+    
+    // 為每個分類定義詳細介紹
+    var categoryDescriptions = new Dictionary<string, string>
+    {
+        { "經典茶類", "古法鮮果熟煮，堅持傳統工藝，精選優質茶葉，每一口都能品嚐到茶的原香與韻味，回甘無窮。" },
+        { "水果茶類", "小農合作茶葉，嚴選當季新鮮水果，搭配清爽茶湯，果香與茶香完美融合，健康又美味。" },
+        { "鮮奶茶類", "自家釀製茶凍，使用100%鮮乳，不添加任何奶精，濃郁奶香與茶香交織，滑順口感讓人回味。" },
+        { "奶蓋茶類", "嚴選新鮮食材，綿密細緻的奶蓋，搭配清爽茶底，層次分明的口感，每一口都是驚喜。" },
+        { "特色飲品", "季節限定飲品，創意調配，獨家配方，融合多種元素，帶給您前所未有的味覺體驗。" },
+        { "咖啡飲品", "精選咖啡豆，專業烘焙，搭配多種風味，無論是濃郁美式或香醇拿鐵，都能滿足您的咖啡癮。" },
+        { "季節限定", "當季限定飲品，把握時令食材的最佳風味，錯過要再等一年，絕對值得一試。" }
+    };
+}
+
+<style>
+    /* 首頁專用：移除頁面的 padding/margin */
+    .main-content {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+</style>
+
+<!-- 全螢幕輪播區 -->
+<div class="hero-slider">
+    <div class="slider-wrapper">
+        <!-- 輪播圖片 -->
+        <div class="slide active" style="background: url('https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg') center/cover no-repeat;">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title animate-fade-in">🍹 喝了變可愛飲料店</h1>
+                <p class="slide-subtitle animate-fade-in-delay-1">精選飲品，讓您每一口都充滿幸福</p>
+                <a href="/Menu" class="slide-btn animate-fade-in-delay-2">查看菜單</a>
+            </div>
+        </div>
+
+        <div class="slide" style="background: url('https://images.pexels.com/photos/33428108/pexels-photo-33428108.jpeg') center/cover no-repeat;">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title animate-fade-in">✨ 季節限定新品上市</h1>
+                <p class="slide-subtitle animate-fade-in-delay-1">草莓芒果系列，錯過可惜</p>
+                <a href="/Menu" class="slide-btn animate-fade-in-delay-2">立即選購</a>
+            </div>
+        </div>
+
+        <div class="slide" style="background: url('https://images.pexels.com/photos/1693626/pexels-photo-1693626.jpeg') center/cover no-repeat;">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title animate-fade-in">🎉 新會員優惠</h1>
+                <p class="slide-subtitle animate-fade-in-delay-1">首次消費享9折優惠</p>
+                <a href="/Menu" class="slide-btn animate-fade-in-delay-2">馬上體驗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 輪播指示器 -->
+    <div class="slider-indicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+    </div>
+
+    <!-- 向下滾動提示 -->
+    <div class="scroll-indicator">
+        <div class="scroll-text">向下滾動探索更多</div>
+        <div class="scroll-arrow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            let currentSlide = 0;
+            const slides = $('.slide');
+            const indicators = $('.indicator');
+            const totalSlides = slides.length;
+            let autoplayInterval;
+
+            // 切換到指定幻燈片
+            function goToSlide(index) {
+                slides.removeClass('active');
+                indicators.removeClass('active');
+                
+                slides.eq(index).addClass('active');
+                indicators.eq(index).addClass('active');
+                
+                currentSlide = index;
+            }
+
+            // 下一張幻燈片
+            function nextSlide() {
+                const next = (currentSlide + 1) % totalSlides;
+                goToSlide(next);
+            }
+
+            // 開始自動播放
+            function startAutoplay() {
+                autoplayInterval = setInterval(nextSlide, 5000); // 每5秒切換
+            }
+
+            // 停止自動播放
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+
+            // 點擊指示器
+            indicators.on('click', function() {
+                const slideIndex = $(this).data('slide');
+                goToSlide(slideIndex);
+                stopAutoplay();
+                startAutoplay(); // 重新開始自動播放
+            });
+
+            // 啟動自動播放
+            startAutoplay();
+
+            // 滾動指示器點擊事件
+            $('.scroll-indicator').on('click', function() {
+                $('html, body').animate({
+                    scrollTop: $('.content-section').offset().top
+                }, 800);
+            });
+
+            // 滾動時淡出滾動指示器
+            $(window).on('scroll', function() {
+                const scrollTop = $(window).scrollTop();
+                if (scrollTop > 100) {
+                    $('.scroll-indicator').fadeOut();
+                } else {
+                    $('.scroll-indicator').fadeIn();
+                }
+            });
+        });
+    </script>
+}
+
+
+<!-- 內容區域 -->
+<div class="content-section">
+    <div class="container">
+        <!-- 類別介紹 -->
+        <div class="category-intro-section">
+            <h2 class="section-title">飲品特點</h2>
+            <p class="section-subtitle">FEATURE POINTS</p>
+
+            <div class="category-grid">
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var category in Model)
+                    {
+                        var description = categoryDescriptions.ContainsKey(category.Name ?? "")
+                        ? categoryDescriptions[category.Name ?? ""]
+                        : (category.Description ?? "精選飲品，品質保證");
+
+                        <a href="@Url.Action("Index", "Menu", new { categoryId = category.Id })" class="category-intro-card-link">
+                            <div class="category-intro-card">
+                                <div class="category-intro-overlay">
+                                    <div class="category-intro-icon">
+                                        <i class="@(category.IconClass ?? "fas fa-mug-hot")"></i>
+                                    </div>
+                                    <h3 class="category-intro-title">@(category.Name ?? "未命名分類")</h3>
+                                    <div class="category-intro-description">
+                                        <p>@description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+        <!-- 特色介紹 -->
+        <div class="features-section">
+            <h2 class="section-title">為什麼選擇我們</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="feature-title">新鮮食材</h3>
+                        <p class="feature-text">嚴選新鮮食材，每日現做，保證品質</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="feature-title">用心製作</h3>
+                        <p class="feature-text">每一杯都是精心調配，讓您喝出幸福</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="feature-title">多樣選擇</h3>
+                        <p class="feature-text">49款飲品，總有一款適合您</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA 區域 -->
+        <div class="cta-section text-center">
+            <h2 class="cta-title">準備好開始您的美味之旅了嗎？</h2>
+            <p class="cta-text">立即瀏覽我們的菜單，找到您最愛的飲品</p>
+            <a href="/Menu" class="btn btn-primary btn-lg cta-btn">
+                <i class="fas fa-mug-hot"></i> 查看完整菜單
+            </a>
+        </div>
+    </div>
+</div>
