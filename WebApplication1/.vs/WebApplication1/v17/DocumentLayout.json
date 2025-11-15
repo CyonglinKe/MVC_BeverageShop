@@ -1,37 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\",
+  "WorkspaceRootPath": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|d:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\github_1111\\mvc_beverageshop\\webapplication1\\webapplication1\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|c:\\github_1112\\mvc_beverageshop\\webapplication1\\webapplication1\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|d:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\github_1111\\mvc_beverageshop\\webapplication1\\webapplication1\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|c:\\github_1112\\mvc_beverageshop\\webapplication1\\webapplication1\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|d:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\github_1111\\mvc_beverageshop\\webapplication1\\webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|c:\\github_1112\\mvc_beverageshop\\webapplication1\\webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|d:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\github_1111\\mvc_beverageshop\\webapplication1\\webapplication1\\wwwroot\\css\\cart.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|c:\\github_1112\\mvc_beverageshop\\webapplication1\\webapplication1\\wwwroot\\css\\cart.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\cart.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|d:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\github_1111\\mvc_beverageshop\\webapplication1\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|c:\\github_1112\\mvc_beverageshop\\webapplication1\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|d:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\github_1111\\mvc_beverageshop\\webapplication1\\webapplication1\\wwwroot\\css\\menu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|c:\\github_1112\\mvc_beverageshop\\webapplication1\\webapplication1\\wwwroot\\css\\menu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\menu.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|d:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\github_1111\\mvc_beverageshop\\webapplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|c:\\github_1112\\mvc_beverageshop\\webapplication1\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|d:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\github_1111\\mvc_beverageshop\\webapplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|c:\\github_1112\\mvc_beverageshop\\webapplication1\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1BE52703-CA59-44A1-9561-BFC7D7242DE8}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -51,9 +51,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CartController.cs",
-              "DocumentMoniker": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Controllers\\CartController.cs",
+              "DocumentMoniker": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\CartController.cs",
-              "ToolTip": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Controllers\\CartController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\CartController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -64,22 +64,21 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Privacy.cshtml",
-              "DocumentMoniker": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Home\\Privacy.cshtml",
+              "DocumentMoniker": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Home\\Privacy.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Home\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAACxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T07:31:52.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-27T07:31:52.412Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "site.css",
-              "DocumentMoniker": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\site.css",
+              "DocumentMoniker": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\site.css",
               "RelativeToolTip": "WebApplication1\\wwwroot\\css\\site.css",
               "ViewState": "AgIAAKMCAAAAAAAAAAAQwLACAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -89,9 +88,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "menu.css",
-              "DocumentMoniker": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\menu.css",
+              "DocumentMoniker": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\menu.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\menu.css",
-              "ToolTip": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\menu.css",
+              "ToolTip": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\menu.css",
               "RelativeToolTip": "WebApplication1\\wwwroot\\css\\menu.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -101,9 +100,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "cart.css",
-              "DocumentMoniker": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\cart.css",
+              "DocumentMoniker": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\cart.css",
               "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\cart.css",
-              "ToolTip": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\cart.css",
+              "ToolTip": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\wwwroot\\css\\cart.css",
               "RelativeToolTip": "WebApplication1\\wwwroot\\css\\cart.css",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAC8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
@@ -113,9 +112,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAJsAAAAAAAAAAAAAAKkAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -125,9 +124,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAAwAcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -137,9 +136,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\\u52DE\u52D5\u90E8\u8AB2\u7A0B\\\u5168\u7AEF\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "WebApplication1\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -153,18 +152,20 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AgIAAPoUAAAAAAAAAAAcwBEVAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
               "WhenOpened": "2025-10-20T07:33:46.517Z",

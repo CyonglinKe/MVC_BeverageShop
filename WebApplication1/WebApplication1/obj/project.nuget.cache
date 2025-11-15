@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qCy/aCw9n6A=",
+  "dgSpecHash": "RO0wsIqyt7s=",
   "success": true,
-  "projectFilePath": "D:\\勞動部課程\\全端\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\勞動部課程\\全端\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\勞動部課程\\全端\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\勞動部課程\\全端\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\勞動部課程\\全端\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\勞動部課程\\全端\\GitHub_1111\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "C:\\GitHub_1112\\MVC_BeverageShop\\WebApplication1\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
